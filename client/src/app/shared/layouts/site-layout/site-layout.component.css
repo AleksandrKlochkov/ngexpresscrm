@@ -49,6 +49,13 @@ nav {
     top: 0;
     z-index: 99999;
     position: absolute;
+    height: 55px;
+    line-height: 55px;
+}
+
+nav .nav-wrapper i{
+    height: 55px;
+    line-height: 55px;
 }
 
 .content {
@@ -58,7 +65,6 @@ nav {
 .burger {
     position: absolute;
     left: 200px;
-    top: 3px;
 }
 
 .close{
@@ -69,9 +75,42 @@ nav {
     opacity: 0;
 }
 
-
-
 .content-fluid{
     width: 100%;
     margin: 0;
+}
+
+nav.nav-breadcrumb {
+    background-color: #fff;
+    color: #374850;
+    position: initial;
+    margin: 10px 0;
+    border: none;
+    box-shadow: none;
+    height: 30px;
+    line-height: 30px;
+}
+
+nav.nav-breadcrumb .nav-wrapper {
+    padding-left: 0;
+}
+
+.breadcrumb{
+    color: #374850;
+    font-size: 16px;
+
+}
+
+.breadcrumb:before {
+    color: #374850;
+    font-weight: bold;
+    font-style: normal;
+    font-size: 16px;
+    margin: 0 5px;
+}
+
+h4.main-title {
+    line-height: normal;
+    margin: 10px 0;
+    font-size: 24px;
 }

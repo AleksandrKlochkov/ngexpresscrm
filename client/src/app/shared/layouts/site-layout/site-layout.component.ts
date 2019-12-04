@@ -1,6 +1,6 @@
 import { Component, OnInit, AfterViewInit, ViewChild, ElementRef } from '@angular/core'
 import { AuthServices } from '../../servises/auth.service';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { MaterialServices } from '../../classes/material.services';
 
 @Component({
@@ -13,6 +13,7 @@ export class SiteLayoutComponent implements OnInit, AfterViewInit {
 
   @ViewChild('floating', {static: false}) floatingRef: ElementRef
   @ViewChild('sidebar', {static: false }) sidebarRef: ElementRef
+  title: string = ''
 
   toggleSide: boolean = true
 
@@ -21,13 +22,17 @@ export class SiteLayoutComponent implements OnInit, AfterViewInit {
     {url: '/analytics', name: 'Аналитика', icon: 'equalizer'},
     {url: '/history', name: 'История', icon: 'history'},
     {url: '/order', name: 'Добавить заказ', icon: 'library_add'},
-    {url: '/categories', name: 'Ассортимент', icon: 'apps'}
+    {url: '/categories', name: 'Ассортимент', icon: 'apps'},
+    {url: '/contacts', name: 'Контакт центр', icon: 'call'}
   ]
 
   constructor(private auth: AuthServices,
-              private router: Router) { }
+              private router: Router,
+              private route: ActivatedRoute) { }
 
   ngOnInit() {
+    console.log(this.route)
+    this.title = ''
   }
 
   ngAfterViewInit(){

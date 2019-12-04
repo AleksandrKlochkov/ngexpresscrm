@@ -13,6 +13,7 @@ import { CategoriesPageComponent } from './categories-page/categories-page.compo
 import { CategoriesFormComponent } from './categories-page/categories-form/categories-form.component'
 import { OrderCategoriesComponent } from './order-page/order-categories/order-categories.component'
 import { OrderPositionsComponent } from './order-page/order-positions/order-positions.component'
+import { ContactsPageComponent } from './contacts-page/contacts-page.component'
 
 const routes: Routes = [
     {
@@ -33,7 +34,8 @@ const routes: Routes = [
             ] },
             {path: 'categories', component: CategoriesPageComponent},
             {path: 'categories/new', component: CategoriesFormComponent},
-            {path: 'categories/:id', component: CategoriesFormComponent}
+            {path: 'categories/:id', component: CategoriesFormComponent},
+            {path: 'contacts', component: ContactsPageComponent}
         ]
     }
 ]

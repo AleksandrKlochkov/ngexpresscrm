@@ -1,7 +1,7 @@
 
 <nav>
     <div class="nav-wrapper">
-        <a href="#" [routerLink]="['/overview']"  class="brand-logo">Small CRM</a>
+        <a href="#" [routerLink]="['/overview']"  class="brand-logo">CRM</a>
         <a href="#" (click)="toggleSidebar($event)" class="burger"><i class="small material-icons">dehaze</i></a>
         
         <ul id="nav-mobile" class="right hide-on-med-and-down">
@@ -12,7 +12,7 @@
 <div>
     <!--SIDEBAR-->
     <ul #sidebar class="sidenav sidenav-fixed a-sidenav" [ngClass]="{'close': !toggleSide}">
-        <h4>Small CRM</h4>
+        <h4>CRM</h4>
         <li
         class="bold"
         *ngFor="let link of links"
@@ -33,12 +33,20 @@
     </ul>
     <!--CONTENT-->
     <main class="content" [ngClass]="{'content-fluid': !toggleSide}" >
+        <!-- <h4 class="main-title">История заказов</h4>
+        <nav class="nav-breadcrumb">
+            <div class="nav-wrapper">
+                <div class="col s12">
+                <a href="#!" class="breadcrumb">First</a>
+                <a href="#!" class="breadcrumb">Second</a>
+                <a href="#!" class="breadcrumb">Third</a>
+                </div>
+            </div>
+        </nav> -->
         <router-outlet></router-outlet>
     </main>
 
     <a id="menu" style="opacity: 0;" class="waves-effect waves-light btn btn-floating"><i class="material-icons">info</i></a>
-
-
 
     <!--Floating button-->
     <div class="fixed-action-btn" #floating>

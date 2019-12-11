@@ -1,2 +1,63 @@
 @import "../node_modules/materialize-css/dist/css/materialize.min.css";
 @import "../theme/styles.min.css";
+
+.close-box {
+    display: none;  
+}
+
+.bg-menu {
+    background-color: #374850 !important;
+}
+
+.card .card-image img {
+    max-height: 250px;
+}
+
+.tap-target-wrapper {
+    z-index: 999999;
+}
+
+@media screen and (max-width: 992px){
+    .order-row .card {
+        width: 48.5%;
+        min-width: 175px;
+        box-sizing: border-box;
+        margin: 5px;
+        margin-right: 5px;
+    }
+
+    .close-box {
+        display: block;    
+    }
+}
+
+@media screen and (max-width: 749px){
+    .order-row .card {
+        width: 100%;
+        min-width: 175px;
+        box-sizing: border-box;
+        margin: 5px;
+        margin-right: 5px;
+    }
+}
+
+@media screen and (max-width: 480px){
+    .order-row .card {
+        width: 100%;
+        min-width: 175px;
+        box-sizing: border-box;
+        margin: 5px;
+        margin-right: 5px;
+    }
+
+    .auth-block .card {
+        width: 100%;
+        max-width: 90%;
+        margin: 0 auto;
+    }
+}
+
+
+
+
+

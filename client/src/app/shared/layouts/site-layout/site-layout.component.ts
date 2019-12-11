@@ -31,8 +31,6 @@ export class SiteLayoutComponent implements OnInit, AfterViewInit {
               private route: ActivatedRoute) { }
 
   ngOnInit() {
-    console.log(this.route)
-    this.title = ''
   }
 
   ngAfterViewInit(){

@@ -2,7 +2,7 @@
 <nav>
     <div class="nav-wrapper">
         <a href="#" [routerLink]="['/overview']"  class="brand-logo">CRM</a>
-        <a href="#" (click)="toggleSidebar($event)" class="burger"><i class="small material-icons">dehaze</i></a>
+        <a href="#" (click)="toggleSidebar($event)" class="burger"><i class="small material-icons">clear_all</i></a>
         
         <ul id="nav-mobile" class="right hide-on-med-and-down">
             <li><a href="#" (click)="logout($event)">Выйти</a></li>
@@ -11,26 +11,27 @@
 </nav>
 <div>
     <!--SIDEBAR-->
-    <ul #sidebar class="sidenav sidenav-fixed a-sidenav" [ngClass]="{'close': !toggleSide}">
-        <h4>CRM</h4>
-        <li
-        class="bold"
-        *ngFor="let link of links"
-        routerLinkActive="active"
-        >
-        
-            <a [routerLink]="[link.url]" class="waves-effect waves-teal">
-                <i class="small material-icons">{{link.icon}}</i> {{link.name}}
-            </a>
-        </li>
-        
-        <li class="bold last">
-            <a href="#" (click)="logout($event)" class="waves-effect waves-orange">
-                <i class="small material-icons">exit_to_app</i>
-                Выйти
-            </a>
-        </li>
-    </ul>
+        <ul #sidebar class="sidenav sidenav-fixed a-sidenav" [ngClass]="{'close': !toggleSide}">
+            <h4>CRM</h4>
+            <li
+            class="bold"
+            *ngFor="let link of links"
+            routerLinkActive="active"
+            >
+            
+                <a [routerLink]="[link.url]" class="waves-effect waves-teal">
+                    <i class="small material-icons">{{link.icon}}</i> {{link.name}}
+                </a>
+            </li>
+            
+            <li class="bold last">
+                <a href="#" (click)="logout($event)" class="waves-effect waves-orange">
+                    <i class="small material-icons">exit_to_app</i>
+                    Выйти
+                </a>
+            </li>
+        </ul>
+        <div *ngIf="toggleSide" class="sidenav-backdrop close-box" (click)="toggleSidebar($event)"></div>
     <!--CONTENT-->
     <main class="content" [ngClass]="{'content-fluid': !toggleSide}" >
         <!-- <h4 class="main-title">История заказов</h4>

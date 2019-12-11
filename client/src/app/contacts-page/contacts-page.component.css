@@ -1,0 +1,11 @@
+.contants-widgets .card-image-box {
+    height: 170px;
+    max-height: 170px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contants-widgets .card-image-box > i {
+    color: #fff;
+}

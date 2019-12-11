@@ -1,6 +1,7 @@
 .sidenav {
     color: #fff;
     background-color: #222d32 !important;
+    z-index: 9999;
 }
 
 .sidenav li>a {
@@ -53,6 +54,16 @@ nav {
     line-height: 55px;
 }
 
+.sidenav-backdrop{
+    background: rgba(4, 4, 4, 0.69);
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 9998;
+}
+
 nav .nav-wrapper i{
     height: 55px;
     line-height: 55px;
@@ -64,7 +75,16 @@ nav .nav-wrapper i{
 
 .burger {
     position: absolute;
-    left: 200px;
+    left: 220px;
+}
+
+@media only screen and (max-width: 992px){
+    .burger {
+        left: 20px;
+    }
+    main{
+        margin-left: 0;
+    }
 }
 
 .close{

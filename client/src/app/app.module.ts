@@ -23,13 +23,16 @@ import { OrderCategoriesComponent } from './order-page/order-categories/order-ca
 import { OrderPositionsComponent } from './order-page/order-positions/order-positions.component';
 import { HistoryListComponent } from './history-page/history-list/history-list.component';
 import { HistoryFilterComponent } from './history-page/history-filter/history-filter.component';
-import { ContactsPageComponent } from './contacts-page/contacts-page.component'
+import { ContactsPageComponent } from './contacts-page/contacts-page.component';
+import { ContactsFormComponent } from './contacts-page/contacts-form/contacts-form.component';
+import { SharedModule } from './shared/shared.module'
+
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginPageComponent,
+    // LoginPageComponent,
     AuthLayoutComponent,
     SiteLayoutComponent,
     RegisterPageComponent,
@@ -45,10 +48,12 @@ import { ContactsPageComponent } from './contacts-page/contacts-page.component'
     OrderPositionsComponent,
     HistoryListComponent,
     HistoryFilterComponent,
-    ContactsPageComponent
+    ContactsPageComponent,
+    ContactsFormComponent
   ],
   imports: [
     BrowserModule,
+    SharedModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,

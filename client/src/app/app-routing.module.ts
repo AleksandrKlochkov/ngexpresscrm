@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core'
-import { RouterModule, Routes } from '@angular/router'
+import { RouterModule, Routes, PreloadAllModules } from '@angular/router'
 import { LoginPageComponent } from './login-page/login-page.component'
 import { AuthLayoutComponent } from './shared/layouts/auth-layout/auth-layout.component'
 import { SiteLayoutComponent } from './shared/layouts/site-layout/site-layout.component'
@@ -14,8 +14,10 @@ import { CategoriesFormComponent } from './categories-page/categories-form/categ
 import { OrderCategoriesComponent } from './order-page/order-categories/order-categories.component'
 import { OrderPositionsComponent } from './order-page/order-positions/order-positions.component'
 import { ContactsPageComponent } from './contacts-page/contacts-page.component'
+import { ContactsFormComponent } from './contacts-page/contacts-form/contacts-form.component'
 
 const routes: Routes = [
+
     {
         path: '', component: AuthLayoutComponent, children: [
              {path: '', redirectTo: '/login', pathMatch: 'full'},
@@ -35,14 +37,20 @@ const routes: Routes = [
             {path: 'categories', component: CategoriesPageComponent},
             {path: 'categories/new', component: CategoriesFormComponent},
             {path: 'categories/:id', component: CategoriesFormComponent},
-            {path: 'contacts', component: ContactsPageComponent}
+            {path: 'contacts', component: ContactsPageComponent},
+            {path: 'contacts/:id', component: ContactsFormComponent}
         ]
+    },
+    {
+        path: 'admin', loadChildren: './admin/admin.module#AdminModule'
     }
 ]
 
 @NgModule({
     imports: [
-        RouterModule.forRoot(routes)
+        RouterModule.forRoot(routes, {
+            preloadingStrategy: PreloadAllModules
+          })
     ],
     exports: [
         RouterModule

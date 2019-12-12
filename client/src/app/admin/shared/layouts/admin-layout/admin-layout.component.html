@@ -1,3 +1,70 @@
-<p>admin-layout works!</p>
 
-<router-outlet></router-outlet>
+<nav>
+    <div class="nav-wrapper">
+        <a href="#" [routerLink]="['/overview']"  class="brand-logo">CRM ADMIN PANEL</a>
+        <a href="#" (click)="toggleSidebar($event)" class="burger"><i class="small material-icons">clear_all</i></a>
+        
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a href="#" (click)="logout($event)">Выйти</a></li>
+        </ul>
+    </div>
+</nav>
+<div>
+    <!--SIDEBAR-->
+        <ul #sidebar class="sidenav sidenav-fixed a-sidenav" [ngClass]="{'close': !toggleSide}">
+            <h4 class="sidenav-h4">CRM ADMIN PANEL</h4>
+            <li
+            class="bold"
+            *ngFor="let link of links"
+            routerLinkActive="active"
+            >
+            
+                <a [routerLink]="[link.url]" class="waves-effect waves-teal">
+                    <i class="small material-icons">{{link.icon}}</i> {{link.name}}
+                </a>
+            </li>
+            
+            <li class="bold last">
+                <a href="#" (click)="logout($event)" class="waves-effect waves-orange">
+                    <i class="small material-icons">exit_to_app</i>
+                    Выйти
+                </a>
+            </li>
+        </ul>
+        <div *ngIf="toggleSide" class="sidenav-backdrop close-box" (click)="toggleSidebar($event)"></div>
+    <!--CONTENT-->
+    <main class="content" [ngClass]="{'content-fluid': !toggleSide}" >
+        <!-- <h4 class="main-title">История заказов</h4>
+        <nav class="nav-breadcrumb">
+            <div class="nav-wrapper">
+                <div class="col s12">
+                <a href="#!" class="breadcrumb">First</a>
+                <a href="#!" class="breadcrumb">Second</a>
+                <a href="#!" class="breadcrumb">Third</a>
+                </div>
+            </div>
+        </nav> -->
+        <router-outlet></router-outlet>
+    </main>
+
+    <a id="menu" style="opacity: 0;" class="waves-effect waves-light btn btn-floating"><i class="material-icons">info</i></a>
+
+    <!--Floating button-->
+    <div class="fixed-action-btn" #floating>
+        <a class="btn-floating btn-large red">
+            <i class="large material-icons">add</i>
+        </a>
+        <ul>
+            <li>
+                <a class="btn-floating green" routerLink="/order">
+                    <i class="material-icons" >assignment</i>
+                </a>
+            </li>
+            <li>
+                <a class="btn-floating blue" routerLink="/categories/new">
+                    <i class="material-icons">list</i>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>

@@ -1,0 +1,46 @@
+<div class="page-title">
+    <h4>
+        Контакт центр
+        <i class="material-icons black-text pointer" (click)="openInfo()">info_outline</i>
+    </h4>
+</div>
+
+<div>
+        <div class="contants-widgets">
+                <div class="frow order-row" >
+                    <div
+                        class="card"
+                        [routerLink]="['/contacts','asdasdasd']"
+                    >
+                    <div class="card-image waves-effect waves-block waves-light ">
+                            <div class="card-image-box teal accent-3">
+                                <i class="medium material-icons">contact_mail</i>
+                            </div>
+                        <!-- <img class="activator" src="http://s1.iconbird.com/ico/2013/10/464/w512h5121380984320add1.png"> -->
+                    </div>
+                    <div class="card-content">
+                        <span class="card-title activator grey-text text-darken-4">Форма на сайт</span>
+                    </div>
+                </div>
+            </div>
+            <ng-template #empty>
+                Нет доступных виджетов
+            </ng-template>
+        </div>
+        
+        <ng-template #loader>
+            <app-loader></app-loader>
+        </ng-template>
+</div>
+
+<ng-template #loader>
+    <app-loader></app-loader>
+</ng-template>
+
+<div class="tap-target" data-target="menu" #tapTarget>
+    <div class="tap-target-content">
+        <h5>Зачем нужна эта страница?</h5>
+        <p>Страница “Контакт центр” предоставляет возможность принимать заявки удаленно, и создавать формы для ваших сторонних web-сайтов</p>
+    </div>
+</div>
+    

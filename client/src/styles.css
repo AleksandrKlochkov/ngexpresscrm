@@ -9,6 +9,16 @@
     background-color: #374850 !important;
 }
 
+.brand-logo{
+    font-size: 18px !important;
+}
+
+.a-sidenav h4 {
+    padding: 0 30px;
+    opacity: .8;
+    font-size: 18px;
+}
+
 .card .card-image img {
     max-height: 250px;
 }
